@@ -159,11 +159,220 @@ print("Hello World 世界你好!!")    #print 可以打印多个变量到屏幕�
         所有条件不成立，则执行此条2
 """
 
-age = int(input("欢迎来到这里，你的年龄是"))
-if (age >18):
-    print("很好，你可以进去了")
-elif (age == 18):
-    print("刚好成年，你可以进去了")
-else:
-    print("未成年，不允许进入")
+# age = int(input("欢迎来到这里，你的年龄是"))
+# if (age >18):
+#     print("很好，你可以进去了")
+# elif (age == 18):
+#     print("刚好成年，你可以进去了")
+# else:
+#     print("未成年，不允许进入")
+
+# 小练习
+# a = 3
+# num = input("1，2，3，4，5三个数字，猜猜我心里的数字是多少")
+# num = int(num)
+# if (num == 3):
+#     print("厉害，一次就猜对了")
+# elif (int(input("不对，再猜一次") ) == 3):
+#     print("猜对了")
+# elif (int(input("不对，再猜一次") ) == 3):
+#     print("猜对了")
+# else:
+#     print("机会用完，数字是3")
+
+# 小练习
+# age = int(input("请输入你的年龄："))
+# if (age < 18):
+#     print("年龄太小了，不可以领取礼物！")
+# else :
+#     if (age < 30) :
+#         t = int(input("请输入你的入职时间："))
+#         r = int(input("请输入你的级别："))
+#         if (t > 2) :
+#             print("年龄达标，入职时间达标，可以领取礼物")
+#         elif (r > 3) :
+#             print("年龄达标，级别达标，可以领取礼物")
+#         else :
+#             print("必须要入职时间大于2年或者等级大于3，你不满足不可以领取礼物！")
+#     else :
+#         print("年龄太大了，不可以领取礼物！")
+
+# 小练习
+# import random
+# num = random.randint(1,10)  #用来产生一个可以储存随机数的变量
+# print(num)
+# print("你有3次机会，从1 - 10之中猜一个数字")
+# g = int(input("你猜的是："))
+# if (g < num) :
+#     g = int(input("这个数有点小，再猜一次："))
+#     if (g > num) :
+#         g = int(input("这个数有点大，再猜一次："))
+#         if (g != num ) :
+#             print("三次都没有猜对，这个数是%d" %num)
+#         else :
+#             print("猜对了，这个数是%d" %num)
+#     elif (g < num) :
+#         g = int(input("这个数有点小，再猜一次："))
+#         if (g != num):
+#             print("三次都没有猜对，这个数是%d" % num)
+#         else:
+#             print("猜对了，这个数是%d" % num)
+#     else :
+#             print("猜对了，这个数是%d" % num)
+#
+# if (g > num) :
+#     g = int(input("这个数有点大，再猜一次："))
+#     if (g > num) :
+#         g = int(input("这个数有点大，再猜一次："))
+#         if (g != num ) :
+#             print("三次都没有猜对，这个数是%d" %num)
+#         else :
+#             print("猜对了，这个数是%d" %num)
+#     elif (g < num) :
+#         g = int(input("这个数有点小，再猜一次："))
+#         if (g != num):
+#             print("三次都没有猜对，这个数是%d" % num)
+#         else:
+#             print("猜对了，这个数是%d" % num)
+#     else :
+#             print("猜对了，这个数是%d" % num)
+#
+# else:
+#     print("猜对了，这个数是%d" % num)
+
+    # while 循环语句,只有条件满足就会无限循环执行,可以嵌套
+"""
+    while (条件) :
+        条件满足时，做的事情1
+        条件满足时，做的事情2
+        条件满足时，做的事情3
+        ...
+"""
+# 小练习
+# i = 1
+# sum = 0
+# while (i <= 100) :
+#     sum = sum + i
+#     print(sum)
+#     i += 1
+# print(sum)
+
+# 小练习
+# import random
+# r_num = random.randint(1,100)
+# # print("请从1 - 100 之中猜一个数字%d" %r_num)
+# g = int(input("请输入你猜的数字"))
+# i = 0
+# while (g != r_num) :
+#     i += 1
+#     if (g > r_num) :
+#         print("猜大了")
+#     else :
+#         print("猜小了")
+#     print("这是你猜的第%d次" %i)
+#     g = int(input("再猜一次："))
+# print("猜中了，你一共猜了%d次" %i)
+
+    # print 语句输出默认换行，使用 end = '',即可使输出不换行
+    # 制表符： \t,可以使我们的字符串在多行之间对其，相当于按下tab键
+
+# 小练习
+# r = 1
+# while ( r <= 9 ) :
+#     i = 1
+#     while (i < r):
+#         print(f"{i} * {r} = {i * r} \t", end= '')
+#         i += 1
+#     print(f"{r} * {i} = {i * r}")
+#     r += 1
+
+    # for 循环语句，把被处理数据集里的数据拿出来依次的执行,无法定义循环条件
+    # 待处理数据集就是序列：字符串，列表，元组等
+    # for 循环中的临时变量，其作用域限定在循环内
+"""
+for 临时变量 in (待处理数据集) :
+    执行的语句
+"""
+# 小练习
+# name = 'fhfkadytuh54jaa'
+# i = 0
+# for x in (name) :
+#     if (x == 'a'):
+#         i += 1
+# print(i)
+
+    # range(num) 获取一个从0 开始，到 num 结束的数字序列
+    # range(num1, num2) 获取一个从 num1 开始，到 num2 结束的数字序列,且不包含 num2 本身100
+    # range(num1, num2, step) 获取一个从 num1 开始，到 num2 结束的数字序列,且不包含 num2 本身，其中 step 是步长（间隔）
+        # 比如 range(1, 10, 2)就是从 1 开始每隔 2 取一个数，结果是 1 3 5 7 9
+# 小练习
+# num = int(input("请输入一个数"))
+# i = 0
+# for x in range(1, num) :
+#     print(x, end=' ')
+#     if (x % 2 == 0) :
+#         i += 1
+# print()
+# print("有%d个偶数" %i)
+
+    # continue 关键字，可以用于中断本次循环直接进入下一次循环，可用与 for 和 while
+    # break 直接结束所在的循环
+    # 在嵌套循环中， break 和 continue 无法对上层循环作用
+
+    # 函数是组织好的可重复使用的代码段
+    # 函数语句：没有传入参数和返回值也可以，但是传入参数的位置必须有括号
+    # 函数定义好后必须要调用才能使用，调用直接用: 函数名(传入参数)
+"""
+    def 函数名 (传入参数) :
+        函数体
+        ...
+        return 返回值
+"""
+
+# 小练习
+# def str_lent(data) :
+#     i = 0
+#     for x in data:
+#         i += 1
+#     print(i)
+#
+# str1 = '6tshtzfhzhz'
+# str2 = '6'
+# str3 = '6tshthzzhz'
+#
+# str_lent(str1)
+# str_lent(str2)
+# str_lent(str3)
+# print(type(str_lent(str1)))
+
+    # 函数定义中的参数是形式参数,函数调用中的参数是实际参数，参数数量不限用逗号隔开
+# 小练习
+# def tem_test (t) :
+#     """
+#     函数要有说明文档，方便阅读。在Pycharm环境下，用3引号会自动补全注释
+#     :param t:
+#     :return:
+#     """
+#     if (t > 37.5) :
+#         print(f"您的体温是{t}度，体温过高，需要隔离！")
+#     elif (t <= 36) :
+#         print(f"您的体温是{t}度，体温过低，不正常！")
+#     else :
+#         print(f"您的体温是{t}度，体温正常，请进")
+#     return t
+#
+# while (1 != 0) :
+#     t = int(input("请输入您的体温："))
+#     t = tem_test(t)
+#     if ( t>37.5 ) :
+#         print("你发烧了")
+#     else :
+#         print("ok")
+    # 返回值，return 一个 返回值 之后在函数调用是就可以用一个变量接受这个数据，return 代表函数结束
+    # 当函数没有 return 时，也有返回值：None ，类型是 NoneType
+
+    # 局部变量只存在函数内部，不可以在外部调用
+    # 全局变量是在函数内外都可以使用的，定义在函数外面即可
+
+
 
