@@ -373,6 +373,195 @@ for 临时变量 in (待处理数据集) :
 
     # 局部变量只存在函数内部，不可以在外部调用
     # 全局变量是在函数内外都可以使用的，定义在函数外面即可
+    # global 局部变量， 可以把局部变量变为全局变量
 
+# 小练习
+# b = 1000
+# def menu () :
+#     """
+#     主菜单
+#     :return:
+#     """
+#     print("\n")
+#
+#     print("欢迎来到私人银行\n")
+#     print("查询余额\t【输入1】")
+#     print("存款\t【输入2】")
+#     print("取款\t【输入3】")
+#     print("退出\t【输入4】")
+#
+# def add (b, m) :
+#     """
+#     存款
+#     :param b:
+#     :param m:
+#     :return:
+#     """
+#     b += m
+#     return b
+# def sub (b, m) :
+#     """
+#     取款
+#     :param b:
+#     :param m:
+#     :return:
+#     """
+#     if (m <= b) :
+#         b -= m
+#         print(f"取款成功，您的余额为{b}元")
+#     else :
+#         print("余额不足，无法操作！\n")
+#
+# while (1 != 0) :
+#     menu()
+#     o = int(input('请选择你的操作：'))
+#     if (o == 1):
+#         print(f"您好，您的余额为{b}元")
+#     elif (o == 2):
+#         m = int(input('请输入您想存款金额：'))
+#         b = add(b, m)
+#         print(f"存款成功，您的余额为{b}元")
+#     elif (o == 3):
+#         m = int(input('请输入您想取款金额：'))
+#         b = sub(b, m)
+#     else:
+#         print("谢谢使用，您已经退出")
 
+    # 数据容器，一个可以容纳多个数据的数据类型，容纳的每个数据称为元素，每个元素可以是任意类型的数据
+        # 数据容器分为5类：列表（list），元组（tuple），字符串（str），集合（set），字典（dict）
+
+        # 列表（list）：
+"""
+定义字面量： 
+[元素1,元素2,元素3...]
+定义变量：
+变量名称 = [元素1,元素2,元素3...]
+定义空列表：
+变量名称 = []
+变量名称 = list()
+"""
+        # 如果想取出列表中的数据，用下标索引，从左边第一个元素0开始递增，也可以反向下标索引，从右边第一个-1开始递减
+# a = ['dsfa',[1,2,3,4],7]
+# print(a[0])
+# print(a[-2])
+# print(a.index('dsfa'))
+# a[0] = [111111]
+# print(a)
+# a.insert(0,'dsfa')
+# print(a)
+# a.append('aaaaa')
+# print(a)
+# b = ['bbbbb','ccccc','ddddd']
+# a.extend(b)
+# print(a)
+# del a[0]
+# print(a)
+# e = a.pop(0)
+# print(e)
+# print(a)
+# a.remove(7)
+# print(a)
+# print(a.count('bbbbb'))
+# print(len(a))
+# a.clear()
+# print(a)
+
+        # 列表也可以：
+            # 查询元素，语法：列表. index(元素)
+            # 修改元素，语法：列表[下标] = 值
+            # 插入元素，语法：列表. insert(下标,元素)
+            # 删除元素：
+                # 语法1：del 列表[下标]
+                # 语法2：列表. pop[下标]。这种方法是把元素取出来，有返回值
+                # 语法3：列表. remove(元素)。在列表中搜寻这个元素然后移除
+                # 语法4：列表. clear()。把整个列表清空
+            # 追加元素:
+                # 单个元素追加， 语法1：列表. append(元素),这种方法只把元素追加到列表的尾部
+                # 多个元素追加， 语法2：列表. extend(其它数据容器),这种方法把其它数据容器的一批元素追加到列表的尾部
+            # 统计元素个数：
+                # 语法1：列表. count(元素1)。统计列表中元素1的数量
+                # 语法2：len(列表) 。统计列表所有元素的数量，得到一个int值
+    # 如果把函数定义在 class 下，函数会称为方法
+
+# 小练习
+# age = [21,25,21,23,22,20]
+# age. append(31)
+# nw_age = [29,33,30]
+# age.extend(nw_age)
+# print(age[0])
+# print(age[-1])
+# print(age.index(31))
+# print(age)
+
+    # 把列表中的元素依次取出叫做：遍历
+"""
+方法1(while): 可以自定条件，灵活控制
+index = 0
+while (index < len(列表)) :
+    元素 = 列表[index]
+    处理语句
+    ...
+    index += 1 ， 很重要
+
+方法2(for): 只能一个个从容器中取出数据
+for 临时变量 in 数据容器 :
+    处理语句
+    ...
+"""
+# 小练习
+# num = [1,2,3,4,5,6,7,8,9,10]
+# i = 0
+# while (i < len(num)) :
+#     odd_num = num[i]
+#     if (odd_num % 2 != 0) :
+#         print(odd_num)
+#     i += 1
+# print(num,end='\n')
+# for x in num :
+#     if (x % 2 == 0):
+#         print(x,end=' ')
+
+    # 元组和列表特性操作一样，但是不可被修改，相当于只读的列表。但如果在元组内嵌套一个列表，还是可以修改这个列表的
+    # 注意！！如果定义的元组只有一个元素，还是要在元素后面加逗号，要不然就会识别成字符串
+    # t = ("abcde", )
+"""
+定义元组字面量： 
+(元素1,元素2,元素3...)
+定义元组变量：
+变量名称 = (元素1,元素2,元素3...)
+定义空元组：
+变量名称 = ()
+变量名称 = tuple()
+"""
+# 小练习
+# infor = ('Klaus',24,['Judo','Archery'])
+# print(infor)
+# print(infor.index(24))
+# print(infor[0])
+# del infor[2][1]
+# print(infor)
+# infor[2].append('Judo')
+# print(infor)
+
+    # 字符串也算是一种数据类型和列表特性操作一样，但是不可被修改，相当于只读的列表。
+        # 字符串的替换，语法：字符串. replace(字符串1，字符串2)，将字符串内的全部 字符串1 替换成 字符串2
+# str1 = "aaaaabbbbb"
+# print(str1)
+# n_str1 = str1. replace("a","b")
+# print(n_str1)
+# print(str1)
+
+    # 注意，这种替换实际上是得到了新字符串，不会修改原本的字符串
+
+        # 字符串的分割，语法：字符串. split(分隔符字符串)，按照指定的分隔符字符串将原本字符串划分为多个字符串，并存入列表对象中
+str2 = "aaa0bbb0ccc0ddd0eee0"
+print(str2)
+n_str2 = str2. split("0")
+print(n_str2)
+print(str2)
+    # 注意，这种分割实际上是得到了新字符串，不会修改原本的字符串
+
+        # 字符串的规整操作：
+            # 去除前后空格，语法：字符串. strip()
+            # 去除前后指定字符串，语法：字符串. strip(指定字符串)
 
