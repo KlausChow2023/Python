@@ -1,3 +1,5 @@
+import my_utils.str_util
+
 print("Hello World 世界你好!!")    #print 可以打印多个变量到屏幕上，中间用 , 隔开
     # 字面量：代码中被写下来的固定值。
     # Python 常见有6种数据类型：数字（Number），字符串（String），列表（List），元组（Tuple），集合（Set），字典（Dictionary）
@@ -596,6 +598,7 @@ for 临时变量 in 数据容器 :
             # 步长2 表示每次隔一个元素取元素
             # 步长N 表示每次隔 N-1 个元素取元素
             # 步长负数表示反向取，此时起始下标和结束下标也要为负数
+                # 可以反转
 
     # 集合 不支持元素重复，且无序,不支持下标索引，可被修改
 """
@@ -679,6 +682,7 @@ for 临时变量 in 数据容器 :
         # min(数据容器)，用来统计容器最小元素
         # list(数据容器)，将容器转换为列表
         # str(数据容器)，将容器转换为字符串
+            # 这种方法字符串是单个分开的，使用 ''. join(数据容器) 语句能得到相连的字符串
         # tuple(数据容器)，将容器转换为元组
         # set(数据容器)，将容器转换为集合
 
@@ -788,4 +792,60 @@ from 模块名 import 功能名 as 别名       #给功能改名
     # 按住 ctrl 键然后点击模块名，可以查看模块内部文件
 
     # 自定义模块时如果有重名的功能名，则最新的会把之前的覆盖掉
-    #
+    # 在实际开发中，开发人员编写完一个模块后，为了验证会加上测试语句。但是这样我们在导入模块时，就会自动执行测试语句并输出结果
+        #如果要避免这种情况，可以在测试语句之前加上：
+"""
+if __name__ == '__main__':
+"""
+    # 如果一个模块中有 __all__ 变量，当使用 from 模块名 import * 时，只能用 __all__ 这个列表里的元素
+        # 但是如果用其它 import 方式就不受限制
+
+    # 如果Python模块太多了，可能会造成混乱。这时可以用 Package 包
+        # 本质上，包就是一个文件夹，包含一个__init__.py。这个文件包含多个模块文件，所以其实包也是模块
+        # 直接右键 就可以创建 package，新创建的包文件内部自带__init__.py
+            # 导入包：
+"""
+import 包名. 模块名
+包名. 模块名. 目标
+"""
+# import my_mod.my_trans
+#
+# a = '15'
+# b = -14
+# try :
+#     print(a + b)
+# except :
+#     a = my_mod.my_trans.int_trans(a)
+#     print(a + b)
+
+    # 第三方包，是别人编写好的包。可以极大提高开发效率
+        # 可以用内置的 pip 程序，从网络上下载包。打开 CMD，用如下语句安装(也可以用Pycharm安装)
+"""
+>pip install 包名称
+"""
+
+# 小练习
+# import my_utils
+# s = input()
+#
+# print(my_utils.str_util.str_rev(s))
+#
+# s = input()
+# x = input()
+# y = input()
+# print(my_utils.str_util.substr(s, x, y))
+
+    # JSON 是一种轻量级的数据交互格式，本质上是一个带有特定格式的字符串。可以按照指定的格式去组织和封装数据。负责各个编程语言之间数据的交互
+        # python和Json的相互转换：
+"""
+先导入json模块
+import json
+
+准备符合jason格式的数据，就是python里的 字典(dict) 类型
+
+json数据 = json. dumps(python数据)      # 把python数据转换成json
+
+python数据 = json.load(json数据)        # 把json数据转换成python
+"""
+
+
