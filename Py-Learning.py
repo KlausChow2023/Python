@@ -837,15 +837,33 @@ import 包名. 模块名
 
     # JSON 是一种轻量级的数据交互格式，本质上是一个带有特定格式的字符串。可以按照指定的格式去组织和封装数据。负责各个编程语言之间数据的交互
         # python和Json的相互转换：
+        # ensure_ascii = False 用这个语句防止中文被乱码
 """
 先导入json模块
 import json
 
-准备符合jason格式的数据，就是python里的 字典(dict) 类型
+准备符合jason格式的数据，就是python里的 字典(dict) 类型 {k: v, k: v, k: v, k: v}
 
 json数据 = json. dumps(python数据)      # 把python数据转换成json
 
 python数据 = json.load(json数据)        # 把json数据转换成python
 """
 
+    # 用pyecharts
+# from pyecharts.charts import Line
+#
+# l_graph = Line()
+#     # 创建一个折线图对象
+# l_graph.add_xaxis(['Klaus','Jason','Tomas','Ryan'])
+#     # 给x轴添加数据
+# l_graph.add_yaxis('柔道等级',[3,8,6,9])
+#     # 给y轴一个名字，并添加数据
+#
+#     # 设置全局配置项
+# l_graph.set_global_opts(
+#     # 可以美化图标，加标题工具栏等
+# )
+# l_graph.render()
+#     # 生产 .html文件 图像
 
+    # 用
