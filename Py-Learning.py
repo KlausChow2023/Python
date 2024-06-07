@@ -849,7 +849,8 @@ json数据 = json. dumps(python数据)      # 把python数据转换成json
 python数据 = json.load(json数据)        # 把json数据转换成python
 """
 
-    # 用pyecharts
+    # 用 pyecharts 构建可视化图表
+        # 折线图
 # from pyecharts.charts import Line
 #
 # l_graph = Line()
@@ -858,7 +859,7 @@ python数据 = json.load(json数据)        # 把json数据转换成python
 #     # 给x轴添加数据
 # l_graph.add_yaxis('柔道等级',[3,8,6,9])
 #     # 给y轴一个名字，并添加数据
-#
+# l_graph.reversal_axis()     # 反转 x,y 轴
 #     # 设置全局配置项
 # l_graph.set_global_opts(
 #     # 可以美化图标，加标题工具栏等
@@ -866,4 +867,104 @@ python数据 = json.load(json数据)        # 把json数据转换成python
 # l_graph.render()
 #     # 生产 .html文件 图像
 
-    # 用
+        # 地图可视化
+# from pyecharts.charts import Map
+# from pyecharts.options import VisualMapOpts
+#
+# map_1 = Map()
+# data = [
+#     ("北京市", 105),
+#     ("内蒙古自治区", 10546),
+#     ("甘肃省", 15),
+#     ("江西省", 105),
+#     ("湖北省", 1880),
+#         ]
+# map_1.add("地图", data, "china")      # china 要小写
+
+# 这里可以设置全局选项，具体代码参考帮助文档
+
+# map_1.render()
+
+    # 绘制时间线柱状图
+# from pyecharts.charts import Bar
+# from pyecharts.charts import Timeline
+#
+# bar1 = Bar()
+# bar1.add_xaxis(["China", "Japan", "Spain"])
+# bar1.add_yaxis("GDP", [10, 30, 20])
+#
+# bar2 = Bar()
+# bar2.add_xaxis(["China", "Japan", "Spain"])
+# bar2.add_yaxis("GDP", [40, 90, 60])
+#
+# bar3 = Bar()
+# bar3.add_xaxis(["China", "Japan", "Spain"])
+# bar3.add_yaxis("GDP", [100, 130, 90])
+#
+# bar4 = Bar()
+# bar4.add_xaxis(["China", "Japan", "Spain"])
+# bar4.add_yaxis("GDP", [290, 260, 180])
+#
+# timeline = Timeline()
+# timeline.add(bar1,'1990')
+# timeline.add(bar2,'2000')
+# timeline.add(bar3,'2010')
+# timeline.add(bar4,'2020')
+#
+# timeline.add_schema(
+#     play_interval = 1000,
+#     is_timeline_show= True,
+#     is_auto_play= True,
+#     is_loop_play= True
+# )       # 设置自动播放参数
+#
+# timeline.render()
+
+# 小练习, 给列表 按照 递增或递减排序
+# m_list = [['a', 4], ['d', 44], ['e', 444], ['b', 4444], ['c', 44444]]
+# def fun_sort (e) :
+#     return e[1]
+# m_list.sort(key= fun_sort , reverse= False)
+# print(m_list)
+
+
+    # 使用对象组织数据：设计类，创建对象，对象属性赋值
+        # 在类中定义方法的语句：
+"""
+def 方法名(self, 形参1, 形参2, 形参3, ... , 形参 N) :
+    方法体
+    # 这里的 self 必须要有，但是它不会被当成传入参数，可以当成不存在
+        # 如果想访问 类 内的成员变量，这在调用时必须以 self.成员变量 的格式
+"""
+# 小练习
+# class Student:  # 设计一个类：包含属性(数据)，称为成员变量和行为(函数)称为成员方法
+#     name = None
+#     gender = None
+#     weight = None
+#     height = None
+#     age = None
+#
+# stu_info = Student()    # 创建一个对象
+#
+# stu_info.weight = 86
+# stu_info.gender = 'Male'
+# stu_info.name = 'Klaus'
+# stu_info.age = 24
+# stu_info.height = 185   # 为对象赋值
+#
+# print(stu_info.height)
+# print(stu_info.age)
+# print(stu_info.weight)
+# print(stu_info.gender)
+# print(stu_info.name)
+
+# class Judo_r :
+#     Kyu = None
+#     def ran(self,):
+#         print(self.Kyu)
+#
+# my_r = Judo_r()
+# my_r.Kyu = 4
+#
+# my_r.ran()
+
